@@ -53,20 +53,22 @@ a * {
 
 sub {
   color: #2d86aa;
-  /* font-size: 1rem; */
+  font-size: 1.4rem;
 }
 /* object {
   pointer-events: none;
 } */
+
+#map { height: 180px; }
 
 header {
   font-size: 1.5rem;
 }
 
 header, footer {
-  height: 5rem;
-  background-color: #515a5d;
-  /* background-color: #a1acb0; */
+  height: 4rem;
+  /* background-color: #515a5d; */
+  background-color: #a1acb0;
   color: aliceblue;
   display: flex;
   justify-content: center;
@@ -158,6 +160,9 @@ ul {
 .form-container {
   flex: 1;
   width: 100%;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 label {

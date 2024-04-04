@@ -6,10 +6,16 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>HTML 5 Boilerplate</title>
         <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""
+        />
     </head>
     <body>
         <main>
-            <header>Psychotherapy Services</header>
+            <header>Psychotherapy & Psychology Services</header>
             <section class="hero">
                 <div class="hero-image"></div>
                 <div class="hero-content">
@@ -26,15 +32,25 @@
             </section>
             <section class="content">
                 <div class="content-copy">
-                    <p class="copy-headline">
-                        I provide both long-term open ended and short-term
-                        therapy, in person and online.
+                    <p>
+                        I offer long-term and short-term psychotherapy, in
+                        person and online.
                     </p>
                     <p>
-                        Drawing on Psychodynamic and Systemic Family Therapy
-                        ideas in my Psychotherapy work. I work for an NHS Adult
-                        Mental Health and Psychology Service, alongside my
-                        private practice.
+                        I draw on Psychodynamic and Systemic Family Therapy
+                        models in my Psychotherapy work.
+                    </p>
+                    <p>
+                        A Psychodynamic approach allows for exploration of an
+                        individual's inner world and their emotional life, while
+                        a Systemic approach allows for considerations of a
+                        person's context, their family and cultural systems and
+                        difficulties that may arise in relationships between
+                        people.
+                    </p>
+                    <p>
+                        I work for an NHS Adult Mental Health and Psychology
+                        Service, alongside my private practice.
                     </p>
                     <p><b>Fees:</b> £110 per session</p>
                     <p>
@@ -80,6 +96,7 @@
                         </div>
                         <button id="submit-button">Submit</button>
                     </form>
+                    <div id="map"></div>
                 </aside>
             </section>
         </main>
@@ -87,6 +104,11 @@
             <span>HCPC Registered Practitioner Psychologist</span>
             <span>Woodside Park, N12</span>
         </footer>
+        <script
+            src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""
+        ></script>
         <script src="./main.js"></script>
     </body>
 </html>
