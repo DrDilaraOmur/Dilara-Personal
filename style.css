@@ -1,5 +1,5 @@
 :root {
-  --page-margin: 15rem;
+  --page-margin: 16.66%;
 }
 
 @font-face {
@@ -7,20 +7,12 @@
   src: url("assets/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf");
 }
 
-@font-face {
-  font-family: "Alegreya";
-  src: url("/assets/fonts/Alegreya/Alegreya-VariableFont_wght.ttf");
-}
 
 @font-face {
-  font-family: "Raleway";
+  font-family: "Test";
   src: url("/assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
 }
 
-@font-face {
-  font-family: "Roboto";
-  src: url("/assets/fonts/Roboto_Flex/RobotoFlex-VariableFont_GRAD\,XOPQ\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf");
-}
 
 * {
   box-sizing: border-box;
@@ -28,7 +20,6 @@
   padding: 0;
   font-family: 'Nunito Sans';
   color: #515a5d;
-  /* font-family: 'Roboto'; */
 }
 
 .contact-link {
@@ -55,14 +46,13 @@ sub {
   color: #2d86aa;
   font-size: 1.4rem;
 }
-/* object {
-  pointer-events: none;
-} */
 
 #map { height: 180px; }
 
 header {
+  padding: 0 var(--page-margin);
   font-size: 1.5rem;
+  white-space: nowrap;
 }
 
 header, footer {
@@ -86,8 +76,12 @@ footer span {
   color: aliceblue;
 }
 
+.footer-span-end {
+  text-align: end;
+}
+
 h1, h2, h3 {
-    font-family: 'Raleway';
+    font-family: 'Test';
 }
 
 h1 {
@@ -116,6 +110,7 @@ ul {
   background-color: #d9eaf1;
   display: flex;
   height: 25rem;
+  height: 51vh;
   padding: 0 var(--page-margin);
 }
 
@@ -129,6 +124,7 @@ ul {
   filter: drop-shadow(-40px 0px 30px rgba(0,0,0,0.2));
   background-repeat: no-repeat;
   background-size: contain;
+  min-width: 307px;
 }
 
 
@@ -224,6 +220,65 @@ textarea {
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* li::marker {
+@media screen and (max-width: 1050px) {
 
-} */
+  .content {
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (max-width: 775px) {
+  :root {
+    --page-margin: 10%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .contact-link {
+    justify-content: center;
+  }
+
+  .contact-link span {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  header {
+    font-size: 1rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .hero {
+    padding-top: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-image {
+    background-position: 50% 50%;
+    border-bottom: 1px solid #2d86aa;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  footer {
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+    flex-direction: column;
+    height: inherit;
+  }
+  footer span {
+    text-align: center;
+  }
+}
