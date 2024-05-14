@@ -6,17 +6,24 @@ const setup = () => {
     form.addEventListener('submit', (event) => {
         event.preventDefault()
 
-        const nameInput = document.getElementById('name-input').value
-        const emailInput = document.getElementById('email-input').value
-        const phoneInput = document.getElementById('phone-input').value
-        const messageBody = document.getElementById('message-input').value
+        const nameInput = document.getElementById('name-input')
+        const emailInput = document.getElementById('email-input')
+        const phoneInput = document.getElementById('phone-input')
+        const messageBody = document.getElementById('message-input')
+        const submitButton = document.getElementById('submit-button')
 
-        emailjs.send('XXXXX', 'XXXXX', {
-            enquiry_name: nameInput || 'XXXXX',
-            enquiry_phone: phoneInput || 'XXXXX',
-            enquiry_email: emailInput || 'XXXXX',
-            message: messageBody || 'XXXXX',
-        })
+        nameInput.setAttribute('disabled', true)
+        emailInput.setAttribute('disabled', true)
+        phoneInput.setAttribute('disabled', true)
+        messageBody.setAttribute('disabled', true)
+        submitButton.setAttribute('disabled', true)
+
+        // emailjs.send('XXXXX', 'XXXXX', {
+        //     enquiry_name: nameInput.value || 'XXXXX',
+        //     enquiry_phone: phoneInput.value || 'XXXXX',
+        //     enquiry_email: emailInput.value || 'XXXXX',
+        //     message: messageBody.value || 'XXXXX',
+        // })
     })
     addMap()
 }

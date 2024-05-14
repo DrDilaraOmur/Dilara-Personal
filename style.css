@@ -22,6 +22,10 @@
   color: #515a5d;
 }
 
+*:disabled {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
 .contact-link {
   display: flex;
   align-items: center;
@@ -181,18 +185,22 @@ input {
   transition: all 0.3s;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, input:hover, textarea:hover {
   box-shadow: 0px 5px 0px #d9eaf1;
-  /* outline: none; */
 }
 
 button {
   padding: 0.25rem 0;
   border: none;
   cursor: pointer;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #2d86aa;
   color: #2d86aa;
   background-color: #d9eaf1;
+}
+
+button:hover {
+  color: #d9eaf1;
+  background-color: #2d86aa;
 }
  
 .message-input-container {
@@ -208,6 +216,9 @@ textarea {
   resize: none;
   outline: none;
   transition: all 0.1s;
+
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 2px;
 }
 
 .copy-headline {
