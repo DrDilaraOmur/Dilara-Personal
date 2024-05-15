@@ -6,11 +6,6 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>HTML 5 Boilerplate</title>
         <link rel="stylesheet" href="style.css" />
-        <script
-            type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-            crossorigin=""
-        ></script>
         <link
             rel="stylesheet"
             href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -26,7 +21,7 @@
                 <div class="hero-content">
                     <h1>Dr Dilara Omur</h1>
                     <sub>Clinical Psychologist</sub>
-                    <a class="contact-link" href="google.com">
+                    <a class="contact-link" href="mailto:email@example.com">
                         <object
                             data="assets/svgs/mail.svg"
                             type="image/svg+xml"
@@ -112,9 +107,17 @@
             <span>HCPC Registered Practitioner Psychologist</span>
             <span class="footer-span-end">Woodside Park, London N12</span>
         </footer>
+        <div id="toast-notification" class="toast-notification">
+            Message Sent
+        </div>
         <script
             src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
             crossorigin=""
         ></script>
         <script src="./main.js"></script>

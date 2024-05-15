@@ -1,7 +1,10 @@
 const setup = () => {
     const form = document.getElementById('form')
+    const toastNotification = document.getElementById('toast-notification')
 
-    setupEmail()
+    const removeActiveNotification = () => {
+        toastNotification.classList.remove('notification-active')
+    }
 
     form.addEventListener('submit', (event) => {
         event.preventDefault()
@@ -18,19 +21,31 @@ const setup = () => {
         messageBody.setAttribute('disabled', true)
         submitButton.setAttribute('disabled', true)
 
-        // emailjs.send('XXXXX', 'XXXXX', {
-        //     enquiry_name: nameInput.value || 'XXXXX',
-        //     enquiry_phone: phoneInput.value || 'XXXXX',
-        //     enquiry_email: emailInput.value || 'XXXXX',
-        //     message: messageBody.value || 'XXXXX',
-        // })
+        try {
+            emailjs.send(
+                process.env.EMAIL_SERVICE_ID,
+                process.env.EMAIL_TEMPLATE_ID,
+                {
+                    enquiry_name: nameInput.value || 'XXXXX',
+                    enquiry_phone: phoneInput.value || 'XXXXX',
+                    enquiry_email: emailInput.value || 'XXXXX',
+                    message: messageBody.value || 'XXXXX',
+                }
+            )
+            toastNotification.classList.add('notification-active')
+
+            setTimeout(removeActiveNotification, 2000)
+        } catch (err) {
+            console.log('error: ', err)
+        }
     })
+    setupEmail()
     addMap()
 }
 
 const setupEmail = () => {
     emailjs.init({
-        publicKey: 'XXXXX', // CHANGE ME
+        publicKey: process.env.EMAIL_PUBLIC_KEY, // CHANGE ME
         blockHeadless: true,
         limitRate: {
             // Set the limit rate for the application

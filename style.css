@@ -109,8 +109,6 @@ ul {
 }
 
 .hero {
-  /* background: rgb(185,243,255);
-  background: linear-gradient(43deg, rgba(185,243,255,1) 0%, rgba(188,186,240,1) 100%);  */
   background-color: #d9eaf1;
   display: flex;
   height: 25rem;
@@ -124,7 +122,6 @@ ul {
 
 .hero-image {
   background-image: url(./assets/images/VESIKA.png);
-  /* -webkit-filter: drop-shadow(5px 5px 5px #222); */
   filter: drop-shadow(-40px 0px 30px rgba(0,0,0,0.2));
   background-repeat: no-repeat;
   background-size: contain;
@@ -185,7 +182,7 @@ input {
   transition: all 0.3s;
 }
 
-input:focus, textarea:focus, input:hover, textarea:hover {
+input:focus, textarea:focus, input:hover:not([disabled]), textarea:hover:not([disabled]) {
   box-shadow: 0px 5px 0px #d9eaf1;
 }
 
@@ -198,9 +195,13 @@ button {
   background-color: #d9eaf1;
 }
 
-button:hover {
+button:hover:not([disabled]) {
   color: #d9eaf1;
   background-color: #2d86aa;
+}
+
+button:disabled {
+  cursor: default;
 }
  
 .message-input-container {
@@ -229,6 +230,23 @@ textarea {
 .rule {
   height: 1px;
   background: rgba(0, 0, 0, 0.2);
+}
+
+.toast-notification {
+  position: fixed;
+  z-index: 999999;
+  padding: 0.5rem 4rem;
+  border-radius: 3px;
+  left: 50px;
+  bottom: 50px;
+  background-color: #d9eaf1;
+  box-shadow: 0px 0px 30px #00000024;
+  transform: translateX(-400px);
+  transition: all 0.5s ease-in-out;
+}
+
+.notification-active {
+  transform: translateX(0px);
 }
 
 @media screen and (max-width: 1050px) {
