@@ -17,10 +17,6 @@ jobs:
 
     - name: Setup Vars
       run: echo "const EMAIL_SERVICE_ID = '${{ environments.EMAIL_SERVICE_ID }}'; const EMAIL_TEMPLATE_ID = '${{ environments.EMAIL_TEMPLATE_ID }}'; const EMAIL_PUBLIC_KEY = '${{ secrets.EMAIL_PUBLIC_KEY }}';" >> envs.js
-      # env:
-      #   EMAIL_PUBLIC_KEY: ${{ secrets.EMAIL_PUBLIC_KEY }}
-      #   EMAIL_SERVICE_ID: ${{ environments.EMAIL_SERVICE_ID }}
-      #   EMAIL_TEMPLATE_ID: ${{ environments.EMAIL_TEMPLATE_ID }}
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
