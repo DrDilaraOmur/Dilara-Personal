@@ -15,11 +15,13 @@ jobs:
             - name: Setup Pages
               id: pages
               uses: actions/configure-pages@v3
+            - name: Log stuff
+              run: echo ${{ vars.EMAIL_TEMPLATE_ID }}
             - name: Inject Keys
               env:
                   EMAIL_SERVICE_ID: ${{ vars.EMAIL_SERVICE_ID }}
                   EMAIL_TEMPLATE_ID: ${{ vars.EMAIL_TEMPLATE_ID }}
-                  EMAIL_PUBLIC_KEY: ${{ vars.EMAIL_PUBLIC_KEY }}
+                  EMAIL_PUBLIC_KEY: ${{ secrets.EMAIL_PUBLIC_KEY }}
               run: echo "const EMAIL_SERVICE_ID = '$EMAIL_SERVICE_ID'; const EMAIL_TEMPLATE_ID = '$EMAIL_TEMPLATE_ID'; const EMAIL_PUBLIC_KEY = '$EMAIL_PUBLIC_KEY';" >> envs.js
             - name: Build with Jekyll
               uses: actions/jekyll-build-pages@v1
