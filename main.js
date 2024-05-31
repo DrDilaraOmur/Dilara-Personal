@@ -37,7 +37,7 @@ const setup = () => {
             setTimeout(removeActiveNotification, 2000)
         } catch (err) {
             console.log('error: ', err)
-            toastNotification.innerHTML = failedToastNotification
+            toastNotification.innerText = failedToastNotification
             toastNotification.classList.add('notification-active')
         }
     })
